@@ -1,0 +1,45 @@
+﻿<Application 
+    x:Class="tralpApp3.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone">
+
+    <!--Application Resources-->
+    <Application.Resources>
+
+        <shell:ApplicationBar x:Key="AppBar1" IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Icons/repetir.png" Text="repetir" Click="Repetir_Click"/>
+            <shell:ApplicationBarIconButton IconUri="/Icons/microfone.png" Text="falar" Click="Microfone_Click"/>
+            <shell:ApplicationBarIconButton IconUri="/Icons/teclado.png" Text="texto" Click="Teclado_Click"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="configurações" Click="configuracao_Click"/>
+                <!--shell:ApplicationBarMenuItem Text="contato" Click="contato_Click"/-->
+                <shell:ApplicationBarMenuItem Text="tutorial" Click="tutorial_Click"/>
+                <!--shell:ApplicationBarMenuItem Text="dicas" Click="dicas_Click"/-->
+                <shell:ApplicationBarMenuItem Text="sobre" Click="sobre_Click"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+
+        <shell:ApplicationBar x:Key="AppBar2" IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton x:Name="camera" IconUri="/Icons/camera.png" Text="gravar" Click="Camera_Click"/>
+            <shell:ApplicationBar.MenuItems>
+                <!--shell:ApplicationBarMenuItem Text="adicionar gesto" Click="adicionar_Click"/-->
+                <shell:ApplicationBarMenuItem Text="configurações" Click="configuracao_Click"/>
+                <!--shell:ApplicationBarMenuItem Text="contato" Click="contato_Click"/-->
+                <shell:ApplicationBarMenuItem Text="tutorial" Click="tutorial_Click"/>
+                <!--shell:ApplicationBarMenuItem Text="dicas" Click="dicas_Click"/-->
+                <shell:ApplicationBarMenuItem Text="sobre" Click="sobre_Click"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+
+    </Application.Resources>
+
+    <Application.ApplicationLifetimeObjects>
+        <!--Required object that handles lifetime events for the application-->
+        <shell:PhoneApplicationService 
+            Launching="Application_Launching" Closing="Application_Closing" 
+            Activated="Application_Activated" Deactivated="Application_Deactivated"/>
+    </Application.ApplicationLifetimeObjects>
+
+</Application>
